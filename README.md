@@ -82,7 +82,7 @@ curl https://kovan.infura.io/v3/your-project-id \
 ```
 
 
-# HecoChain(JSON-RPC、testNet)
+# HecoChain(JSON-RPC、TestNet)
 
 ## 1. 查询当前区块高度(eth_blockNumber)
 
