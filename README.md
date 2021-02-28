@@ -184,7 +184,7 @@ curl https://data-seed-prebsc-1-s1.binance.org:8545 \
 }
 ```
 
-## 2. 查询当前gas价格(eth_gasPrice)
+## 3.2. 查询当前gas价格(eth_gasPrice)
 
 **Request** :
 
@@ -203,7 +203,7 @@ curl https://data-seed-prebsc-1-s1.binance.org:8545 \
 }
 ```
 
-## 3. 查询账户bnb余额(eth_getBalance)
+## 3.3. 查询账户bnb余额(eth_getBalance)
 
 **Request** :
 
@@ -222,7 +222,7 @@ curl https://data-seed-prebsc-1-s1.binance.org:8545 \
 }
 ```
 
-## 4. 查询智能合约代币余额(eth_call)
+## 3.4. 查询智能合约代币余额(eth_call)
 USDC Token: 
 0x64544969ed7EBf5f083679233325356EbE738930
 
