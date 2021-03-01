@@ -1,5 +1,5 @@
 # Flash_BlockChain
-how to interact with ethereum、hecochain and binance smart chain, including their smart contracts
+how to interact with ethereum、hecochain、binance smart chain and okex chain, including their smart contracts
 
 # 1.Ethereum(Infura、JSON-RPC、Kavan)
 
@@ -240,5 +240,85 @@ curl https://data-seed-prebsc-1-s1.binance.org:8545 \
     "jsonrpc":"2.0",
     "id":1,
     "result":"0x0000000000000000000000000000000000000000000000000000000000000000"
+}
+```
+
+# 4. Okex Chain(JSON-RPC、TestNet)
+
+## 4.1. 查询当前区块高度(eth_blockNumber)
+
+**Request** :
+
+```shell script
+curl http://okexchaintest.okexcn.com:26659 \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params": [],"id":1}'
+```
+**Response** :
+```shell script
+{
+    "jsonrpc":"2.0",
+    "id":1,
+    "result":"0x102979"
+}
+```
+
+## 4.2. 查询当前gas价格(eth_gasPrice)
+
+**Request** :
+
+```shell script
+curl http://okexchaintest.okexcn.com:26659 \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -d '{"jsonrpc":"2.0","method":"eth_gasPrice","params": [],"id":1}'
+```
+**Response** :
+```shell script
+{
+    "jsonrpc":"2.0",
+    "id":1,
+    "result":"0x3b9aca00"
+}
+```
+
+## 4.3. 查询账户okt余额(eth_getBalance)
+
+**Request** :
+
+```shell script
+curl http://okexchaintest.okexcn.com:26659 \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -d '{"jsonrpc":"2.0","method":"eth_getBalance","params": ["0x5bbF0971382Faa31ca55e74D89875a1F1531311e", "latest"],"id":1}'
+```
+**Response** :
+```shell script
+{
+    "jsonrpc":"2.0",
+    "id":1,
+    "result":"0x4561f9440b431800"
+}
+```
+
+## 4.4. 查询智能合约代币余额(eth_call)
+ETHK Token: 
+0x5bbc340ed9503228bdb0f72d4e21579a151d55c4
+
+**Request** :
+
+```shell script
+curl http://okexchaintest.okexcn.com:26659 \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -d '{"jsonrpc":"2.0","method":"eth_call","params": [{"to": "0x5bbc340ed9503228bdb0f72d4e21579a151d55c4","data": "0x70a082310000000000000000000000005bbF0971382Faa31ca55e74D89875a1F1531311e"}, "latest"],"id":1}'
+```
+**Response** :
+```shell script
+{
+    "jsonrpc":"2.0",
+    "id":1,
+    "result":"0x0000000000000000000000000000000000000000000000000477973a2100f9d1"
 }
 ```
